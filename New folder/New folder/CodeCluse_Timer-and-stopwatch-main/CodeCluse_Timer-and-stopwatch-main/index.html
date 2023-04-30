@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer and Stopwatch</title>
+  <style>
+    #timer, #stopwatch {
+      font-size: 48px;
+      color: #333;
+      text-align: center;
+    }
+    body{
+      background-color: red;
+    }
+    h1{
+      text-align: center;
+      margin: 30px;
+    }
+    button{
+     margin-left:30px;
+    }
+    .button1{
+      text-align: center;
+      margin: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Timer & stopwatch</h1>
+  <div id="timer"></div>
+  <div id="stopwatch"></div>
+<div class="button1">
+  <button onclick="startStopwatch()">Start</button>
+  <button onclick="stopStopwatch()">Stop</button>
+</div>
+  <script>
+    // Timer
+    var timer = setInterval(function() {
+      var now = new Date();
+      document.getElementById("timer").innerHTML = now.toLocaleTimeString();
+    }, 1000);
+
+    // Stopwatch
+    var start = null;
+    var elapsed = 0;
+    function startStopwatch() {
+      start = new Date();
+      stopwatch = setInterval(function() {
+        var now = new Date();
+        elapsed = now - start;
+        document.getElementById("stopwatch").innerHTML = (elapsed / 1000).toFixed(2) + " Second";
+      }, 10);
+    }
+    function stopStopwatch() {
+      clearInterval(stopwatch);
+      document.getElementById("stopwatch").innerHTML = (elapsed / 1000).toFixed(2) + " Second";
+    }
+  </script>
+</body>
+</html>

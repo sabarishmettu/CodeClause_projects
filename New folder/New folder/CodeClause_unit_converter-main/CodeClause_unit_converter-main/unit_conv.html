@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unit Converter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<span>#task 1 Completed..</span>
+	<h1>Unit Converter</h1>
+	<form>
+		<div>
+			<label for="inputValue">Value:</label>
+			<input type="number" id="inputValue" placeholder="Enter a value">
+		</div>
+		<div>
+			<label for="fromUnit">From:</label>
+			<select id="fromUnit">
+				<option value="m">Meter</option>
+				<option value="km">Kilometer</option>
+				<option value="ft">Foot</option>
+				<option value="mi">Mile</option>
+			</select>
+		</div>
+		<div>
+			<label for="toUnit">To:</label>
+			<select id="toUnit">
+				<option value="m">Meter</option>
+				<option value="km">Kilometer</option>
+				<option value="ft">Foot</option>
+				<option value="mi">Mile</option>
+			</select>
+		</div>
+		<button type="button" onclick="convert()">Convert</button>
+		<div>
+			<label for="result">Result:</label>
+			<input type="text" id="result" readonly>
+		</div>
+	</form>
+
+	<script src="script.js"></script>
+</body>
+</html>
